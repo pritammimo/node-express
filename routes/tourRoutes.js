@@ -7,14 +7,13 @@ const {
   getTour,
   updateTour,
   deleteTour,
-  checkID,
-  checkbody,
+  // checkID,
 } = tourController;
 const router = express.Router();
 
-router.param('id', checkID);
+// router.param('id', checkID);
 //Create a checkbody middlewarre
 
-router.route('/').get(getAllTours).post(checkbody, createTour);
+router.route('/').get(getAllTours).post(createTour);
 router.route('/:id').get(getTour).patch(updateTour).delete(deleteTour);
 module.exports = router;
