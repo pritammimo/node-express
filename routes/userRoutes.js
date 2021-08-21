@@ -6,8 +6,9 @@ const authController = require('../controllers/authController');
 
 const { getAllUsers, createUser, getUser, updateUser, deleteUser } =
   userController;
-const { signup } = authController;
+const { signup, login } = authController;
 router.post('/signup', signup);
+router.post('/login', login);
 router.route('/').get(getAllUsers).post(createUser);
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
