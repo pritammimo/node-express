@@ -1,9 +1,11 @@
 const express = require('express');
+const multer = require('multer');
 
 const router = express.Router();
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 
+const upload = multer({ dest: 'public/img/users' });
 const {
   getAllUsers,
   createUser,
